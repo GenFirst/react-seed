@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-let temp1 = (state, action) => { return state;};
-let temp2 = (state, action) => { return state;};
+let temp1 = (state = {}, action) => { return state;};
+let temp2 = (state = {}, action) => { return state;};
 
 const app = combineReducers({
   temp1,
