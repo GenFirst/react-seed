@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
+import { demoReducer } from './demo.reducer';
 
-let temp1 = (state = {}, action) => { return state;};
 let temp2 = (state = {}, action) => { return state;};
 
 const app = combineReducers({
-  temp1,
+  demoReducer,
   temp2
 });
 
