@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {increment, decrement} from '../actions/demo.actions';
 import { connect } from 'react-redux';
+import {FormattedMessage} from 'react-intl';
 
 class DashboardContainer extends Component {
 
   constructor() {
     super();
-    
+
     this.increment10 = this.increment10.bind(this);
     this.increment20 = this.increment20.bind(this);
     this.decrement5 = this.decrement5.bind(this);
@@ -28,7 +29,11 @@ class DashboardContainer extends Component {
     return (
       <div className="dashboard">
         <p>
-          Dashboard, counter: {this.props.counter}
+          <FormattedMessage
+            id={ 'Dashboard.title' }
+            defaultMessage={ 'Dashboard, counter: {counter, number}' }
+            values={{ counter: this.props.counter }}
+          />
         </p>
         <button onClick={this.increment10}>+10</button>
         <button onClick={this.increment20}>+20</button>

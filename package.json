@@ -6,6 +6,7 @@
     "axios": "^0.16.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-intl": "^2.3.0",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
@@ -16,12 +17,18 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "react-intl-cra": "^0.2.7",
+    "react-intl-po": "^2.1.1",
     "react-scripts": "1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "extract": "react-intl-cra 'src/**/*.jsx' 'output/messages.json'",
+    "extract:pot": "react-intl-po json2pot 'output/messages.json' -o 'output/messages.pot'",
+    "extract:pot-c": "react-intl-po json2pot 'output/messages.json' -c 'id' -o 'output/messages-c.pot'",
+    "extract:po-c": "react-intl-po po2json 'input/*.po' -c 'id' -m 'output/messages.json' -o 'output/translation.json'"
   }
 }
